@@ -52,19 +52,19 @@
   \leavevmode
 
   \begin{beamercolorbox}[wd=\paperwidth]{headline}
-    \begin{columns}
-      \column{.1\paperwidth}
+    \begin{columns}[totalwidth=\paperwidth]
+      \column{.15\paperwidth}
        \begin{center}
          \includegraphics[trim={2.5cm 2cm 2.5cm 1cm},clip,height=28ex]{UWlogo_ctr_4c}
        \end{center}
-      \column{.6\paperwidth}
+      \column{.7\paperwidth}
         \begin{center}
         \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
         \usebeamercolor{author in headline}{\color{fg}\large{\insertauthor}\\[1ex]}
         \usebeamercolor{author in head/foot}{\color{fg}\small{\texttt{\insertsubtitle}}\\[1ex]}
         \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}\\[1ex]}     
         \end{center}
-      \column{.1\paperwidth}
+      \column{.15\paperwidth}
         \begin{center}
           \includegraphics[height=28ex]{WISCIENCE}
         \end{center}
@@ -83,9 +83,8 @@
 \institute{Program and/or department, University of Wisconsin--Madison}
 \begin{document}
 \begin{frame}{} %Everything is going to be inside this one frame
-
 % Creates a columns environment (so that you can declare columns inside)
-\begin{columns}[T]
+\begin{columns}[T, totalwidth=0.986\paperwidth]
 
 % Creates a column of the specified width
 \column{0.2\paperwidth}
