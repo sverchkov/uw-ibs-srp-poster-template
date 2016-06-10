@@ -5,10 +5,10 @@
 %\usepackage[size=custom,width=91.44,height=121.92,scale=1.5,debug]{beamerposter} % Portrait
 
 % 42" x 30"
-\usepackage[size=custom,width=106.68,height=76.2,scale=1.3,debug]{beamerposter} % Landscape
+%\usepackage[size=custom,width=106.68,height=76.2,scale=1.3,debug]{beamerposter} % Landscape
 
 % 24" x 36"
-%\usepackage[size=custom,width=91.44,height=60.96,scale=1.5,debug]{beamerposter} % Landscape
+\usepackage[size=custom,width=91.44,height=60.96,scale=1.5,debug]{beamerposter} % Landscape
 %\usepackage[size=custom,width=60.96,height=91.44,scale=1.5,debug]{beamerposter} % Portrait
 
 %% BIB
@@ -21,64 +21,29 @@
 %% GRAPHICS
 \usepackage{graphicx}
 \graphicspath{{figures/}}
-\DeclareGraphicsExtensions{.pdf}
+\DeclareGraphicsExtensions{.pdf,.png}
 
 %% FOR TABLES
 %\usepackage{colortbl}
-\usepackage{multirow}
+%\usepackage{multirow}
 %\usepackage{rotating}
 
 %% SYMBOLS
-\DeclareMathOperator*{\argmax}{argmax}
+%\DeclareMathOperator*{\argmax}{argmax}
 
 %% COLORS
+% It's good practice to only use a few colors. Defining them here makes it easy to change the color scheme by only changing the colors in one place. SoftRed is matched to the red in the UW logo, and StrongRed is a darker shade of the same hue.
 \definecolor{StrongBlue}{HTML}{043C6B}
 \definecolor{SoftBlue}{HTML}{3F8FD2}
 \definecolor{StrongGreen}{HTML}{00733E}
 \definecolor{SoftGreen}{HTML}{36D88E}
-\definecolor{StrongRed}{HTML}{A64B00}
-\definecolor{SoftRed}{HTML}{FF9640}
+\definecolor{StrongRed}{HTML}{7B0F2A}
+\definecolor{SoftRed}{HTML}{CC1945}
 
-\setbeamercolor{structure}{fg=StrongBlue}
+\setbeamercolor{structure}{fg=SoftRed}
 \setbeamercolor{alerted text}{use=structure,fg=structure.fg}
 \setbeamercolor{block title}{use=structure,fg=structure.bg,bg=structure.fg}
 \setbeamercolor{block title example}{use=structure,fg=structure.fg,bg=structure.bg}
-
-%% DRAWINGS
-\usepackage{tikz}
-\usetikzlibrary{fit,calc,arrows,arrows.meta,decorations.pathreplacing,decorations.text,decorations.pathmorphing,backgrounds,positioning,shapes,shadows,matrix}
-
-\tikzset{%
-  link/.style={-{Latex[length=0.7ex,width=0.7ex]},>=angle 45,very thick},
-  slink/.style={-{|[length=0.0ex,width=1.4ex]},very thick},
-  dlink/.style={-{o[length=1.7ex,width=1.7ex]},>=angle 45,very thick},
-  var/.style={ellipse, draw},
-  text block/.style={rectangle, rounded corners=0.3em, draw=#1, fill=white, thick, text width=5em, align=center},
-  multiple/.style = {double copy shadow={shadow xshift=1ex,shadow
-         yshift=-1.5ex,draw=black!30},fill=white,draw=black,thick,minimum height = 1cm,minimum
-           width=2cm},
-  thick arrow/.style={
-     -{Triangle[angle=120:1pt 1]},
-%     -Triangle,
-     line width=2em, 
-     draw=StrongBlue
-  },
-  arrow label/.style={
-    text=white,
-    font=\sf,
-    align=center
-  },
-  set mark/.style={
-    insert path={
-      node [midway, arrow label, node contents=#1]
-    }
-  },
-  set vertical mark/.style={
-    insert path={
-      node [midway, arrow label, node contents=#1, rotate=-90]
-    }
-  }
-}
 
 %% POSTER TEMPLATE DEFINITION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -87,664 +52,112 @@
   \leavevmode
 
   \begin{beamercolorbox}[wd=\paperwidth]{headline}
-    \begin{columns}[T]
-      \begin{column}{.02\paperwidth}
-      \end{column}
-%      \begin{column}{.1\paperwidth}
-%       \vskip8ex
-%       \begin{center}
-%         \includegraphics[height=24ex]{../../Images/pitt}
-%       \end{center}
-%       \vskip2ex
-%      \end{column}
-      \begin{column}{.75\paperwidth}
-        \centering
-        \vskip4ex
-%        \raggedleft
+    \begin{columns}
+      \column{.1\paperwidth}
+       \begin{center}
+         \includegraphics[trim={2.5cm 2cm 2.5cm 1cm},clip,height=28ex]{UWlogo_ctr_4c}
+       \end{center}
+      \column{.6\paperwidth}
+        \begin{center}
         \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
         \usebeamercolor{author in headline}{\color{fg}\large{\insertauthor}\\[1ex]}
-        \usebeamercolor{author in head/foot}{\color{fg}\small{\texttt{yuriy.sverchkov@wisc.edu}}\\[1ex]}
+        \usebeamercolor{author in head/foot}{\color{fg}\small{\texttt{\insertsubtitle}}\\[1ex]}
         \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}\\[1ex]}     
-      \end{column}
-%      \begin{column}{.1\paperwidth}
-%        \vskip8ex
-%        \begin{center}
-%          \includegraphics[height=24ex]{../../Images/isp}
-%        \end{center}
-%        \vskip2ex
-%      \end{column}
-%      \begin{column}{.1\paperwidth}
-%        \vskip8ex
-%        \begin{center}%width=.95\linewidth
-%          \includegraphics[height=24ex]{../../Images/dbmi}
-%        \end{center}
-%        \vskip2ex
-%      \end{column}
-      \begin{column}{.02\paperwidth}
-      \end{column}
+        \end{center}
+      \column{.1\paperwidth}
+        \begin{center}
+          \includegraphics[height=28ex]{WISCIENCE}
+        \end{center}
     \end{columns}
-    \vskip0ex
   \end{beamercolorbox}
 
   \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
     \rule{0pt}{3pt}
   \end{beamercolorbox}
 }
-\setbeamertemplate{footline}{
-  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
-    \rule{0pt}{3pt}
-  \end{beamercolorbox}
-  
-  \leavevmode%
-  \begin{beamercolorbox}[ht=4ex,leftskip=3em,rightskip=3em]{author in head/foot}%
-    \normalsize
-    \hfill This research is supported by NLM training grant T15 LM007359.
-    %\hfill
-    %\texttt{yuriy@biostat.wisc.edu}
-    \vskip1ex
-  \end{beamercolorbox}
-  \vskip0pt%
-  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
-    \rule{0pt}{3pt}
-  \end{beamercolorbox}
-}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Selecting Double-Knockout Experiments by Active Learning}
-%\subtitle{}
-\author{Yuriy Sverchkov, Mark Craven}
-\date{June 12, 2015}
-\institute{Department of Biostatistics and Medical Informatics, University of Wisconsin--Madison}
+\title{Title goes here}
+\subtitle{your email goes here} % Yes, it's a bit hacky but it's simple.
+\author{Author List}
+\institute{Program and/or department, University of Wisconsin--Madison}
 \begin{document}
-\begin{frame}{} 
+\begin{frame}{} %Everything is going to be inside this one frame
 
-%%%%%%%%%%%%
-% MASTER COLUMNS
-%%%%%%%%%%%%
+% Creates a columns environment (so that you can declare columns inside)
 \begin{columns}[T]
-%%%%%%%%%%%%
-%\column{77em}
-%\begin{columns}[T] % Subcolumns begin
-\column{28em} % A subcolumn
 
-\setbeamercolor{structure}{fg=StrongRed}
+% Creates a column of the specified width
+\column{0.2\paperwidth}
+ \vbox to .95\textheight{% Hack to make vfill work
 
-\begin{block}{Introduction\strut}
-
-\begin{columns}[T]
-\column{11em}
-
-\begin{itemize}
-\item \alert{Scientific task:} Discover intracellular networks, where nodes represent genes and/or their protein products, and edges represent interactions between them.
-\end{itemize}
-
-\column{16em}
-\begin{tikzpicture}[overlay]
-
-\shade[top color=StrongBlue,bottom color=white] (0,0) rectangle (6em,-10em);
-\node at (3em,-0.6em) {\color{white}\bf Active\strut};
-
-\shade[top color=StrongGreen,bottom color=white] (6em,0) rectangle (16em,-10em);
-\node at (11em,-0.6em) {\color{white}\bf Machine Learning\strut};
-
-\node[text block] (data) at (11em,-3em) {Data};
-\node[text block] (ex) at (3em,-7.5em) {Experiment};
-\node[text block] (model) at (11em,-13em) {Model};
- 
-\draw[thick arrow, draw=StrongGreen] (data) -- (model) [set vertical mark={Learning Algorithm}];
-\draw[thick arrow, out=180, in=270] (model) to (ex);
-\draw[thick arrow, out=90, in=180] (ex) to (data);
-\end{tikzpicture}
-
-\end{columns}
-
-\vspace*{2ex}
-
-\begin{columns}[T]
-\column{14em}
-\begin{itemize}
-\item \alert{Gene knockdown experiments} where genes are removed or suppressed and resultant changes observed, are a powerful tool for discovering these networks.
-\end{itemize}
-\column{13em}
-\end{columns}
-
-\vspace*{1ex}
-
-\begin{itemize}
-\item Such experiments are often costly, we must chose them cost-effectively.
-\item This becomes especially important when choosing costlier \alert{double-knockout} experiments, where pairs of genes are knocked out together.
-\item \alert{Active learning/experiment design} is the computational approach to finding the best experiments to perform.
-\end{itemize}
-\end{block}
-
-%\column{19em} % A subcolumn
-%
-%\setbeamercolor{structure}{fg=StrongRed}
-%
-%\begin{block}{Biological Domain\strut}
-% \begin{itemize}
-%  \item Interested in studying protein folding in the endoplasmic reticulum in yeast (\emph{Saccharomyces cerevisiae})
-%  \item Single- and double- knockouts over a set of genes were conducted, and a reporter was measured.
-%  \item \alert{Reporter}: endogenous sensor of unfolded protein status (Ire1p)
-% \end{itemize}
-% %\begin{columns}
-% %\column{19em}
-% \includegraphics[width=17em]{jonikas-reporter.png}
-% \begin{itemize}
-%  \item The goal is to infer the regulatory network upstream of the reporter.
-%  \item We work with measurements of the increase of the ratio of GFP to RFP for each knockout from the baseline level of the wild-type.
-% \end{itemize}
-% %\column{14em}
-% %\includegraphics[width=14em,trim={0 0.5em 4em 0},clip]{fig1b-mod2}
-% %\end{columns}
-% {\footnotesize \fullcite{Jonikas2009}}
-%\end{block}
-
-\column{29em} % A subcolumn
-
-\begin{block}{Our Contribution: Active Learning\strut}
-\begin{itemize}
- \item \alert{Setting:} given partial double-knockout data, select additional double-knockouts that would most reduce uncertainty about the model.
- \item Given initial {\color{StrongGreen} data}, consider an unobserved double-knockout ${\color{StrongRed} a\Delta b\Delta}$
- \item Each possible network ${\color{StrongBlue} N}$ can give a prediction ${\color{StrongRed} \hat R (a\Delta b\Delta) = \mu_r (a\Delta b\Delta)}$ for the reporter level of a double-knockout ${\color{StrongRed} a \Delta b \Delta}$
- \item Use this to predict how the score of a network ${\color{StrongBlue} N}$ would change if we had observed ${\color{StrongRed} a\Delta b\Delta}$
- \[ \text{score}( {\color{StrongBlue}N} | {\color{StrongGreen}\text{data}} \cup \{ {\color{StrongRed} \hat R (a\Delta b\Delta)} \} ) - \text{score}({\color{StrongBlue}N_i} | {\color{StrongGreen}\text{data}}) \]
- \item Averaging over all possible networks according to our posterior distribution to get a score for the expected improvement given by the knockout ${\color{StrongRed} a\Delta b\Delta}$
- \begin{multline*}
- \sum_N P({\color{StrongBlue} N}| {\color{StrongGreen}\text{data}}) ( \text{score}( {\color{StrongBlue}N} | {\color{StrongGreen}\text{data}} \cup \{ {\color{StrongRed} \hat R_i (a\Delta b\Delta)} \} ) - \text{score}({\color{StrongBlue}N} | {\color{StrongGreen}\text{data}}) ) \\= -\sum_N P(N) \log \frac{P(N)}{P'(N)} = -D_{KL}(P\| P')
-  \end{multline*}
- \item This is a calculation of the KL-divergence between the current distribution $P$ and the distribution $P'$ updated with the expected outcome of knockout ${\color{StrongRed} a \Delta b \Delta}$
-\end{itemize}
-\end{block}
-
-\column{29em} % A Subcolumn
-
-\setbeamercolor{structure}{fg=StrongGreen}
-
-\begin{block}{Evaluation Plan\strut}
-{\footnotesize Double-knockout data from \alert{Jonikas et al. (2009). Comprehensive characterization of genes required for protein folding in the endoplasmic reticulum. \emph{Science} 323}}
-
-\begin{tikzpicture}[very thick]
- \node [cylinder,draw=white,text=white,fill=StrongBlue,shape border rotate=90,shape aspect=0.2,anchor=north] (dataAll){Data};
- \node  [cylinder,draw=white,text=white,fill=StrongGreen,shape border rotate=90,shape aspect=0.2,below left=3em and 4em of dataAll] (dataTrain) {Training};
- \node  [cylinder,draw=white,text=white,fill=StrongBlue,shape border rotate=90,shape aspect=0.2,below right=3em and 4em of dataAll] (dataTest) {Testing};
-
- \draw[thick arrow,line width=1.5em,draw=StrongGreen,in=90,out=180] (dataAll) to (dataTrain);
- \draw[thick arrow,line width=1.5em,draw=StrongBlue,in=90,out=0] (dataAll) to (dataTest); 
- 
- \node [cylinder,draw=white,text=white,fill=StrongGreen,shape border rotate=90,shape aspect=0.2,below right=3em and 3em of dataTrain] (dataSeen) {\phantom{u}Observed\phantom{n}};
- \node [cylinder,draw=white,text=white,fill=StrongRed,shape border rotate=90,shape aspect=0.2,below left=3em and 3em of dataTrain] (dataHidden) {Unobserved};
-
- \draw[thick arrow,line width=1.5em,draw=StrongGreen,in=90,out=0] (dataTrain) to (dataSeen);
- \draw[thick arrow,line width=1.5em,draw=StrongRed,in=90,out=180] (dataTrain) to (dataHidden); 
-
- \node [text block,draw=white,text=white,fill=StrongGreen, below=6em of dataSeen] (model) {APN Model Ensemble};
- \node [text block, text width=12em, draw=StrongGreen, left=2em of model] (decision) {\parbox{12em}{
-  \alert{\bf Experiment selection}\\
-  Strategies compared:
-  \begin{itemize}
-   \item Highest-scoring batch
-   \item Top scoring individual
-   \item Random (baseline)
-  \end{itemize}}};
- 
- \draw[thick arrow,draw=StrongGreen] (dataSeen) -- (model) [set vertical mark={Learn}];
- \draw[thick arrow,draw=StrongGreen] (model) -- (decision);
- \draw[thick arrow,draw=StrongGreen, in=180,out=90] ($(decision.north)!0.5!(decision.north east)$) to (dataSeen.west);
- \draw[thick arrow,draw=StrongGreen] (dataHidden) -- (dataSeen) [set mark={Observe}];
- 
- \node [text block, draw=white,text=white,fill=StrongGreen, below=7em of dataTest] (prediction) {Prediction};
- \draw[{Triangle[angle=120:1pt 1]}-{Triangle[angle=120:1pt 1]},line width=2em,draw=StrongBlue] (dataTest) -- (prediction) [set vertical mark={Evaluate}];
- \draw[thick arrow,line width=1.5em,draw=StrongGreen,in=270,out=0] (model) to (prediction);
-\end{tikzpicture}
-\end{block}
-
-\end{columns} % Subcolumns end
-\vspace{1ex}
-
-
-\begin{columns}[T] % Subcolumns begin
-\column{47em} % A Subcolumn
-
-\setbeamercolor{structure}{fg=StrongGreen}
-
-\begin{block}{Model: Activity Pathway Networks\strut}
- {\footnotesize \alert{Battle et al. (2010). Automated identification of pathways from quantitative genetic interaction data. \emph{Molecular systems biology} 6.379}}
-
-\begin{columns}
-\column{27em}
-
- \begin{itemize}
-  \item Bayesian model: defines a posterior distribution over network structures given the data
-\[
-P( N ) = {\color{StrongGreen} \frac{1}{Z}} \exp
- \underbrace{ \left(
- {\color{StrongRed} \overbrace{
- \sum_{r \text{ consistent w/ } N} \text{score}(r)
- }^{\text{Score from structural relationships}} } +
- {\color{StrongBlue} \overbrace{
- \sum_{\text{Edge } e \in N} \text{score}(e)
- }^{\text{Score from edges}} }
- \right) }_{\text{score}(N | \text{data})}
-\]
-  \item Uses relationships between single- and double-knockout reporter levels to score structural features
-%  \item[] \includegraphics[width=25em]{fig1a}
-  \item Each structure implies an expected double-knockout reporter level $\color{StrongRed} \mu_r (a \Delta b \Delta)$ as a function of observed reporter levels $R(a \Delta), R(b \Delta)$, if the observed double-knockout reporter level is close to the expected level implied by the structure, the structure scores higher.
- \[\text{score}(r) =
-\overbrace{
-- \frac{1}{2 \sigma^2_r} ( {\color{StrongBlue}\underbrace{ R( a \Delta b\Delta) }_{ \text{Observed} }} - {\color{StrongRed}\underbrace{ \mu_r ( a \Delta b\Delta) }_{ \text{Expected} }} )^2
-}^{\text{Error penalty}}\]
- \end{itemize}
-
-\column{20em}
- \vspace{1em}\\
- \includegraphics[width=20em]{table-1.png}\\
- \includegraphics[width=20em]{fig1c}
-
-\end{columns}
-\end{block}
-
-\column{29em} % A subcolumn
-
-\setbeamercolor{structure}{fg=StrongRed}
-
-\begin{block}{Annealed Importance Sampling \strut}
-{\footnotesize \alert{Neal (2001). Annealed importance sampling. \emph{Statistics and Computing} 11.2}}
-
-\begin{itemize}
- \item Computing and averaging over the exact distribution of networks is infeasible.
- \item \emph{Annealed Importance Sampling} is a method by which we can obtain a weighted sample of networks to represent the distribution.
- \item Each network in the sample is produced by starting with a random network and modifying it according to a sequence of Markov chains.
-\end{itemize}
-
-{\small
-\begin{tikzpicture}[scale=2.2]
- \node[text block] (n0) at (0,0) {Random network $N_1^{(0)}$};
- 
- \node[text block, text width=2em] (n1) at (5,0) {$N_1^{(1)}$ $w_1^{(1)}$};
- \draw[thick arrow] (n0) -- (n1) [set mark={Structure move}];
- 
- \node[text block, text width=2em] (n2) at (7,0) {$N_1^{(2)}$ $w_1^{(2)}$};
- \draw[thick arrow] (n1) -- (n2);
- 
- \node[circle,fill=StrongBlue] (dotl) at (8,0) {};
- \node[circle,fill=StrongBlue] at (8.5,0) {};
- \node[circle,fill=StrongBlue] (dotr) at (9,0) {};
- %\draw[thick arrow] (n2) -- (dotl);
- \node[text block, text width=7em] (n) at (11,0) {$N_1^{(1000)} \rightarrow N_1$\\$w_1^{(1000)} \rightarrow w_1$};
- %\draw[thick arrow] (dotr) -- (n);
- 
- \node[text block, text width=2em]  (n01) at (0,-2) {$N_2^{(0)}$};
- \node[text block, text width=2em] (n11) at (2,-2) {$N_2^{(1)}$ $w_2^{(1)}$};
- \draw[thick arrow] (n01) -- (n11);
- \draw[thick arrow] (3,-2) -- (4.5,-2);
- \node[circle,fill=StrongBlue] at (5.5,-2) {};
- \node[circle,fill=StrongBlue] at (6,-2) {};
- \node[circle,fill=StrongBlue] at (6.5,-2) {};
- \node[text block, text width=7em] at (11,-2) {$N_2^{(1000)} \rightarrow N_2$\\$w_2^{(1000)} \rightarrow w_2$};
- \draw[thick arrow] (7.5,-2) -- (9,-2); 
-
- \node[circle, draw, thick] at (0,-3) {};
- \node[circle, draw, thick] at (0,-3.5) {};
- \node[circle, draw, thick] at (0,-4) {};
- 
- \node[text block, text width=2em]  (n0l) at (0,-5) {$N_{500}^{(0)}$};
- \node[text block, text width=2em] (n1l) at (2,-5) {$N_{500}^{(1)}$ $w_{500}^{(1)}$};
- \draw[thick arrow] (n0l) -- (n1l);
- \draw[thick arrow] (3,-5) -- (4.5,-5);
- \node[circle,fill=StrongBlue] at (5.5,-5) {};
- \node[circle,fill=StrongBlue] at (6,-5) {};
- \node[circle,fill=StrongBlue] at (6.5,-5) {};
- \node[text block, text width=7em] (nl) at (11,-5) {$N_{500}^{(1000)} \rightarrow N_{500}$\\$w_{500}^{(1000)} \rightarrow w_{500}$};
- \draw[thick arrow] (7.5,-5) -- (9,-5); 
- 
- \node at (11,-3.5) {\bf \vdots};
- 
- \node[rectangle, rounded corners, draw=StrongRed, very thick, fit=(n) (nl)] (sample) {};
- \node[anchor=north] at (sample.south) {\color{StrongRed} Wighted samples};
-\end{tikzpicture}
-}
-\end{block}
-
-
-\column{17em}
+% This changes the color of the block titles that follow, and some elements (like bullet points).
 \setbeamercolor{structure}{fg=StrongBlue}
-\begin{block}{Contributions\strut}
+
+% Put every section of your poster inside a block. (Well, you don't have to, but it makes things pretty)
+\begin{block}{Abstract \strut} % The \strut makes it so that the block titles are the same height, otherwise they'd only be as tall as they need to be to fit the text.
+Some text
 \begin{itemize}
-\item An active learning framework applicable in general to Bayesian models of biological networks.
-\item Batch active learning for biological networks (most  methods for active learning of biological networks focus on selecting one experiment at a time).
-\item Ability to infer networks using experiments with a single reporter (most methods for active learning of biological networks rely on multidimensional measurements, such as expression profiles).
-\item Ongoing and future work to extend this method to:
-\begin{itemize}
- \item take advantage of information from multiple reporters,
- \item other related biological domains,
- \item other types of models.
-\end{itemize}
+ \item Bullet
+ \item Points
+ \item Here
 \end{itemize}
 \end{block}
 
-\end{columns}
+\vfill % This creates vertical space between blocks, if needed.
 
+%Let's make the next block red
+\setbeamercolor{structure}{fg=SoftRed}
+
+\begin{block}{Background and Significance \strut}
+Some text
+\begin{itemize}
+ \item Bullet
+ \item Points
+ \item Here
+\end{itemize}
+\end{block}
+
+\vfill
+
+\begin{block}{Hypotheis or Research Question \strut}
+ I sure hope this research is useful and impressive.
+\end{block}
+
+}% Make sure to close the vbox before the next column
+% Makes the next column. You want them to sum up to less than 1 \paperwidth, for some breathing room.
+\column{0.5\paperwidth}
+\vbox to .95\textheight{% Hack to make vfill work
+
+\begin{block}{Project / Experimental Design \strut}
+
+Some text
+\begin{itemize}
+ \item Bullet
+ \item Points
+ \item Here
+\end{itemize}
+\end{block}
+
+\vfill
+
+\begin{block}{Results \strut}
+\end{block}
+
+}% Make sure to close the vbox before the next column
+\column{0.2\paperwidth}
+\vbox to .95\textheight{% Hack to make vfill work
+
+\begin{block}{References \strut}
+These often don't take this much space. You can maybe fit something more interesting in the third column.
+\end{block}
+
+\vfill
+
+\begin{block}{Acknowledgements \strut}
+\end{block}
+
+}% Make sure to close the vbox
+\end{columns} %Close every environment you open
 \end{frame}
-
 \end{document}
-
-%\begin{block}{Evaluation Workflow\strut}
-%
-%\vspace{1ex}
-%
-%\begin{tikzpicture}
-% \draw[very thick, fill=white] (1em,1em) rectangle (18em,24em);
-% \draw[very thick, fill=white] (0.5em,0.5em) rectangle (17.5em,24.5em);
-% \draw[very thick, fill=white] (0,0) rectangle (17em, 25em);
-%
-% \node[text block, text width=15em] (initial) at (8.5em,22.5em) {\parbox{15em}{
-%   Initial knowledge state
-%   \begin{itemize}
-%    \item All single knockouts observed
-%    \item Some double knockouts observed
-%   \end{itemize}
-%  }};
-% 
-% \node[text block, text width=14em] (s11) at (9em,17em) {\strut\\\strut};
-% \node[text block, text width=14em] (s12) at (8.5em,16.5em) {\strut\\\strut};
-% \node[text block, text width=14em] (s13) at (8em,16em) {AIS Sampler \strut\\\strut $N_1 \rightarrow N_2 \rightarrow \cdots \rightarrow N_{1000}$};
-% \node[fit=(s11) (s12) (s13)] (sampler1) {};
-% 
-% \node[text block, text width=15em] (decision) at (8.5em, 12em) {Pick and observe the next KO};
-% 
-% \node[text block, text width=14em] (s21) at (9em,8em) {\strut\\\strut};
-% \node[text block, text width=14em] (s22) at (8.5em,7.5em) {\strut\\\strut};
-% \node[text block, text width=14em] (s23) at (8em,7em) {AIS Sampler \strut\\\strut $N_1 \rightarrow N_2 \rightarrow \cdots \rightarrow N_{1000}$};
-% \node[fit=(s21) (s22) (s23)] (sampler2) {};
-% 
-% \node[text block, text width=15em] (ue) at (8.5em,2em) {Measure improvement in predicting unobserved knockouts};
-% 
-% \draw[thick arrow] (initial) -- (sampler1);
-% \draw[thick arrow] (sampler1) -- (decision);
-% \draw[thick arrow] (decision) -- (sampler2);
-% \draw[thick arrow] (sampler2) -- (ue);
-%\end{tikzpicture}
-%\end{block}
-
-
-%\begin{block}{}
-%{\small
-%\fullcite{Ideker2000}}
-%
-%\begin{center}
-%\alert{
-%\begin{tikzpicture}
-% \node (title) {Model: Boolean Network};
-% \node[var, below left=of title.south] (a) {A};
-% \node[var, below right=of a] (c) {C};
-% \node[var, above right=of c] (b) {B};
-% \node[var, below right=of c] (d) {D};
-%%
-% \draw[link] (a) -- (c);
-%draw[link] (b) -- (c);
-%draw[link] (b) -- (d);
-%draw[link] (c) -- (d);
-%%
-%node[anchor=north east] at (a.south west) {$A = 1$};
-%node[anchor=north west] at (b.south east) {$B = 0$};
-%node[anchor=north east] at (c.south west) {$
-%\begin{array}{cc}
-% A & B \\ \hline
-% 1 & 0 \\
-% 1 & 1
-%\end{array}
-%};
-%node[anchor=north west] at (d.east) {$
-%\begin{array}{cc}
-% B & C \\ \hline
-% 0 & 1 \\
-% 1 & 0
-%\end{array}
-%};
-%\end{tikzpicture}
-%}
-%\end{center}
-%
-%\begin{description}
-%\item[Biological domain:] Gene regulation.
-%\item[Data:] Observation of all network variables (gene expression).
-%\item[Learning goal:] Network \alert{structure} and \alert{functional relationships}.
-%\begin{itemize}
-%\item Challenge: many different structures and functions are consistent with a set of observations.
-%\end{itemize}
-%\item[Experiments:] Single and double-knockdowns.
-%\item[Experiment selection criterion:] Entropy
-%\end{description}
-%\end{block}
-%
-%\begin{block}{Why is entropy a selection criterion?}
-%\alert{In \cite{Ideker2000}:}
-%\begin{itemize}
-%\item \alert{We have $L$ different models that fit prior data.}
-%\item Strategy: pick experiment $e$ that minimizes
-%\[ H_e = - \sum_s \frac{\ell_s}{L} \log \frac{\ell_s}{L} \]
-%\item $\ell_s$ number of models consistent with outcome $s$.
-%\item Here, $\ell_s / L = P(s | e)$ is the probability of outcome $s$ for experiment $e$ according to our current knowledge.
-%\end{itemize}
-%\alert{The general principle:}
-%\begin{itemize}
-%\item The \alert{best experiment} will bring us to a state of knowledge where our \alert{uncertainty about outcomes} is lowest.
-%\item Mathematically, entropy measures uncertainty:
-%\end{itemize}
-%For an experiment $e$,
-%\[
-%\overbrace{ H_e }^{\text{Entropy}} = - \overbrace{ E_{P(s|e)} \underbrace{ \log P(s|e) }_{\text{Log-probability of the outcome}} }^{\text{Expectation over possible outcomes } s}
-%\]
-%{\small
-%\begin{itemize}
-%\item $H_e$ is large when many models correspond to different outcomes (observing the outcome helps distinguish models).
-%\item $H_e$ is small when many models correspond to the same outcome (observing the outcome will not distinguish models).
-%\end{itemize}
-%}
-%\end{block}
-%
-%\column{0.3\textwidth}
-%
-%\setbeamercolor{structure}{fg=StrongGreen}
-%
-%\begin{block}{An alternative criterion to entropy}
-%{\small
-%\fullcite{Atias2014}}
-%\begin{description}
-%\item[Model:] Boolean Network.
-%\item[Biological domain:] Metabolic pathways.
-%\item[Prior knowledge:] Network structure.
-%\item[Data:] Observation of a subset of network variables.
-%\item[Learning goal:] Recover functional relationships.
-%\item[Experiments:] Growth environment manipulation.
-%\item[Experiment selection criterion:] Pick experiment $e$ to maximize $|| r_{M_1, e} - r_{M_2, e} ||_1$ for some two best-fitting models $M_1, M_2$, where $r_{M,e}$ is the vector of observed variable values according to model $M$.
-%\end{description}
-%\end{block}
-%
-%\setbeamercolor{structure}{fg=StrongRed}
-%
-%\begin{block}{}
-%{\small
-%\fullcite{King2009}}
-%\begin{center}
-%\begin{tikzpicture}
-%\node[var] (a) {A};
-%\node[var, right=6em of a] (b) {B};
-%\node (mark) at ($(a)!0.5!(b)$) {};
-%\node at ([yshift=-1em]mark) {Enzyme};
-%\node[var, above=of mark] (orf) {$ORF_i$};
-%\alert{ \draw[link] (orf) -- (mark);}
-%\draw[link] (a) -- (b);
-%\end{tikzpicture}
-%\end{center}
-%\begin{description}
-%\item[Model:] Logical formalism for metabolic pathways.
-%\item[Biological domain:] Genetic regulation of metabolic pathways.
-%\item[Prior knowledge:] Metabolic pathway model.
-%\item[Data:] Observation of culture growth in various conditions.
-%\item[Learning goal:] Identify which open reading frames (ORF) code for each reaction.
-%\item[Experiments:] Growth environment manipulation combined with knock-downs.
-%\item[Experiment selection criterion:] Entropy, weighed by the costs of experiment materials.
-%\end{description}
-%\end{block}
-%
-%\setbeamercolor{structure}{fg=StrongGreen}
-%
-%\begin{block}{Batch active learning}
-%{\small
-%\fullcite{Szczurek2009}}
-%
-%\begin{center}
-%\begin{tikzpicture}
-%\alert{ \node (title) {Model}; }
-%\node[var, below=of title] (a) {A};
-%\node[var, below left=of a] (b) {B};
-%\node[var, below right=of a] (c) {C};
-%\node[var, below right=of b] (d) {D};
-%\node[var, below=of d] (g3) {$G_3$};
-%\node[var, left=of g3] (g2) {$G_2$};
-%\node[var, left=of g2] (g1) {$G_1$};
-%\node[var, right=of g3] (g4) {$G_4$};
-%\node[var, right=of g4] (g5) {$G_5$};
-%%
-%\node[anchor=west] at (a.east) {Stimulators};
-%\node[anchor=west] at (c.south east) {Regulators};
-%\node[anchor=west] at (g5.east) {Genes};
-%%
-%\draw[link] (a) -- (b);
-%\draw[link] (b) -- (c);
-%\draw[link] (c) -- (d);
-%\draw[link] (d) -- (b);
-%%
-%\alert{
-%\draw[link] (b) -- (g1);
-%\draw[link] (d) -- (g2);
-%\draw[link] (d) -- (g3);
-%\draw[link] (c) -- (g4);
-%\draw[link] (c) -- (g5);
-%}
-%\end{tikzpicture}
-%\end{center}
-%
-%\begin{description}
-%\item[Biological domain:] Gene regulation downstream of signaling pathways.
-%\item[Prior knowledge:] Signaling pathway model.
-%\item[Data:] Gene expression profiles.
-%\item[Learning goal:] Identify which regulators regulate which genes, and how.
-%\item[Experiments:] Single knock-downs in various environmental conditions.
-%\item[Experiment selection criterion:] Entropy
-%\begin{itemize}
-%\item \alert{Idealized goal:} Find the \alert{smallest set} of experiments that would \alert{uniquely identify} which regulator matches each gene and how.
-%\item Considering all possible sets of experiments is infeasible; instead, the set is constructed greedily, adding one best-improving experiment at a time.
-%\end{itemize}
-%\end{description}
-%\end{block}
-%
-%\column{0.3\textwidth}
-%
-%\setbeamercolor{structure}{fg=StrongRed}
-%
-%\begin{block}{}
-%{\small \fullcite{Yeang2005}}
-%
-%\begin{center}
-%\begin{tikzpicture}
-%\node[var] (p1s) {$P_1$};
-%\node[var,below right=of p1s] (p3s) {$P_3$};
-%\node[var,above right=of p3s] (p2s) {$P_2$};
-%\node[var,below left=of p3s] (g1s) {$G_1$};
-%\node[var,below right=of p3s] (g2s) {$G_2$};
-%\node[above=3em of p3s,align=center] {\alert{Prior knowledge}\\Skeleton Graph};
-%%
-%\node[var, right=2em of p2s] (p1) {$P_1$};
-%\node[var,below right=of p1] (p3) {$P_3$};
-%\node[var,above right=of p3] (p2) {$P_2$};
-%\node[var,below left=of p3] (g1) {$G_1$};
-%\node[var,below right=of p3] (g2) {$G_2$};
-%\node[above=3em of p3,align=center] {\alert{Model}\\Learned Graph};
-%%
-%\draw (p1s) -- (p3s);
-%\draw (p1s) -- (g1s);
-%\draw (p2s) -- (p3s);
-%\draw (p2s) -- (g2s);
-%\draw (p3s) -- (g1s);
-%\draw (p3s) -- (g2s);
-%%
-%\alert{
-%\draw[slink] (p1) -- (p3);
-%\draw[slink] (p1) -- (g1);
-%\draw[link] (p3) -- (g1);
-%\draw[link] (p3) -- (p2);
-%\draw[link] (p2) -- (g2);
-%}
-%\end{tikzpicture}
-%\end{center}
-%
-%\begin{description}
-%\item[Biological domain:] Gene regulatory pathways.
-%\item[Data:] Gene expression profiles.
-%\item[Learning goal:] Determine \alert{presence}, \alert{directions}, and \alert{signs} (promoting/suppressing) of interactions.
-%\item[Experiments:] Knockouts.
-%\item[Experiment selection criterion:] Entropy.
-%\end{description}
-%\end{block}
-%
-%\setbeamercolor{structure}{fg=StrongGreen}
-%
-%\begin{block}{}
-%{\small \fullcite{Pournara2004}}
-%\begin{center}
-%\alert{
-%\begin{tikzpicture}
-% \node (title) {Model: Bayesian Network};
-% \node[var, below left=of title.south] (a) {A};
-% \node[var, below right=of a] (c) {C};
-% \node[var, above right=of c] (b) {B};
-% \node[var, below right=of c] (d) {D};
-%%
-% \draw[link] (a) -- (c);
-%draw[link] (b) -- (c);
-%draw[link] (b) -- (d);
-%draw[link] (c) -- (d);
-%%
-%node[anchor=north east] at (a.south west) {$P(A)$};
-%node[anchor=north west] at (b.south east) {$P(B)$};
-%node[anchor=north east] at (c.south west) {$P(C|A,B)$};
-%node[anchor=north west] at (d.east) {$P(D|B,C)$};
-%\end{tikzpicture}
-%}
-%\end{center}
-%\begin{description}
-%\item[Biological domain:] Gene regulation.
-%\item[Data:] Observation of all network variables.
-%\item[Learning goal:] Network \alert{structure} and \alert{functional relationships}.
-%\item[Experiments:] Manipulation (suppression/overexpression).
-%\item[Experiment selection criterion:] Entropy.
-%\item[Note:] Model is inherently robust to observation noise, as it represents a probability distribution.
-%\end{description}
-%\end{block}
-%
-%%\setbeamercolor{structure}{fg=StrongRed}
-%%
-%%\begin{block}{}
-%%{\small \fullcite{Steinke2007}}
-%%\end{block}
-%
-%\vfill
-%
-%\setbeamercolor{structure}{fg=StrongBlue}
-%
-%\begin{block}{Summary and discussion}
-%\begin{itemize}
-%\item The vast majority of active learning methods for biological networks select experiments that optimize model entropy.
-%\item The intuition for optimizing model entropy is that we wish to select experiments that reduce our uncertainty about the system.
-%\item Previous application of batch active learning to this domain is limited to using a greedy approach.
-%\item New directions for constructing experiment sets for batch active learning include various search approaches: dynamic programming, branch-and bound, A*, etc.
-%\item Most methods focus on perturbing a single model element at a time, or a single model element and an environmental factor.
-%\item The automated design of experiments that manipulate multiple elements simultaneously is a promising direction for research.
-%\item Many methods place absolute confidence in some prior knowledge or in data accuracy. More robust methods are needed.
-%\end{itemize}
-%\end{block}
-
-%\end{columns}
